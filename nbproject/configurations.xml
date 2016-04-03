@@ -5,9 +5,9 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>anuncio.h</itemPath>
-      <itemPath>anuncioscontratados.h</itemPath>
       <itemPath>canal.h</itemPath>
       <itemPath>listaanuncios.h</itemPath>
+      <itemPath>listaanuncioscontratados.h</itemPath>
       <itemPath>listacanales.h</itemPath>
       <itemPath>nodoanuncio.h</itemPath>
       <itemPath>nodoanunciocontratado.h</itemPath>
@@ -16,6 +16,14 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>anuncio.cpp</itemPath>
+      <itemPath>canal.cpp</itemPath>
+      <itemPath>listaanuncio.cpp</itemPath>
+      <itemPath>listaanuncioscontratados.cpp</itemPath>
+      <itemPath>listacanales.cpp</itemPath>
+      <itemPath>nodoanuncio.cpp</itemPath>
+      <itemPath>nodoanunciocontratado.cpp</itemPath>
+      <itemPath>nodocanal.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -44,21 +52,37 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="anuncio.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="anuncio.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="anuncioscontratados.h" ex="false" tool="3" flavor2="0">
+      <item path="canal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="canal.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="listaanuncio.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="listaanuncios.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaanuncioscontratados.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="listaanuncioscontratados.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listacanales.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="listacanales.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="nodoanuncio.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="nodoanuncio.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="nodoanunciocontratado.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="nodoanunciocontratado.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nodocanal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="nodocanal.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -83,21 +107,37 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="anuncio.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="anuncio.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="anuncioscontratados.h" ex="false" tool="3" flavor2="0">
+      <item path="canal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="canal.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="listaanuncio.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="listaanuncios.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaanuncioscontratados.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="listaanuncioscontratados.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listacanales.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="listacanales.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="nodoanuncio.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="nodoanuncio.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="nodoanunciocontratado.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="nodoanunciocontratado.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nodocanal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="nodocanal.h" ex="false" tool="3" flavor2="0">
       </item>

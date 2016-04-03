@@ -14,32 +14,40 @@
 #ifndef CANAL_H
 #define CANAL_H
 
-#include "anuncioscontratados.h"
+#include "listaanuncioscontratados.h"
 
 using namespace std;
 
-class Canal
-{
+class Canal {
 private:
-	string codigo;
-	string nombre;
-        int telefono;
-	int montoMinimo;
-        int tiempoMinimo;
-        int tiempoMaximo;
-        int costoPorMinuto;
-        AnunciosContratados anunciosContratados;
+    string codigo;
+    string nombre;
+    int telefono;
+    int montoMinimo;
+    int tiempoMinimo;
+    int tiempoMaximo;
+    int costoPorMinuto;
+    ListaAnunciosContratados * anunciosContratados;
 public:
-	Canal(); // Constructora
-        Canal(string, string, int, int, int, int, int); // Constructora
-        void setCodigo(string);
-        void setNombre(string);
-        void setTelefono(int);
-        void setMontoMinimo(int);
-        void setTiempoMinimo(int);
-        void setTiempoMaximo(int);
-        void setCostoPorMinuto(int);
-        AnunciosContratados getAnunciosContratados();
+    Canal(); // Constructora
+    Canal(string, string, int, int, int, int, int); // Constructora
+    void setCodigo(string);
+    void setNombre(string);
+    void setTelefono(int);
+    void setMontoMinimo(int);
+    void setTiempoMinimo(int);
+    void setTiempoMaximo(int);
+    void setAnunciosContratados(Anuncio *);
+    void setCostoPorMinuto(int);
+    string getCodigo();
+    string getNombre();
+    int getTelefono();
+    int getMontoMinimo();
+    int getTiempoMinimo();
+    int getTiempoMaximo();
+    int getCostoPorMinuto();
+    ListaAnunciosContratados * getAnunciosContratados();
+    void ActualizaCobros();
 };
 
 #endif // LISTAENTEROS_H

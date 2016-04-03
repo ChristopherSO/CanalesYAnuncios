@@ -19,14 +19,14 @@
 class ListaAnuncios
 {
 private:
-	int lingitud;
+	int longitud;
 	NodoAnuncio * cabeza;
 public:
 	ListaAnuncios(); // Constructora
 	int getLongitud();
         NodoAnuncio * getCabeza();
 	void setCabeza(NodoAnuncio *);
-        void insertarAlInicio(int);
+        void insertarAlInicio(NodoAnuncio *);
 	bool estaVacia();
 	void mostrarLista();
 };

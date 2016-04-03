@@ -13,7 +13,6 @@
 
 #ifndef NODOANUNCIOCONTRATADO_H
 #define NODOANUNCIOCONTRATADO_H
-
 #include "nodoanuncio.h"
 
 class NodoAnuncioContratado
@@ -24,7 +23,7 @@ private:
     NodoAnuncioContratado * siguiente;
 public:
     NodoAnuncioContratado(); // Constructora
-    NodoAnuncioContratado(string, NodoAnuncio); // Constructora
+    NodoAnuncioContratado(NodoAnuncio*); // Constructora
     string getCodigoAnuncio();
     NodoAnuncio * getNodoAnuncio();
     NodoAnuncioContratado * getSiguiente();

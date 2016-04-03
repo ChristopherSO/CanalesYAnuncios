@@ -22,13 +22,10 @@ private:
     Anuncio * anuncio;
     NodoAnuncio * siguiente;
 public:
-    NodoAnuncio(); // Constructora
-    NodoAnuncio(int); // Constructora
+    NodoAnuncio(Anuncio *); // Constructora
     Anuncio * getAnuncio();
-    NodoAnuncio * getAnterior();
     NodoAnuncio * getSiguiente();
     void setAnuncio(Anuncio *);
-    void setAnterior(NodoAnuncio *);
     void setSiguiente(NodoAnuncio *);
 };
 

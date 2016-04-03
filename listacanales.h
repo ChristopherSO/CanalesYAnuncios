@@ -19,7 +19,7 @@
 class ListaCanales
 {
 private:
-	int lingitud;
+	int longitud;
 	NodoCanal * cabeza;
 	NodoCanal * cola;
 public:
@@ -29,8 +29,8 @@ public:
         NodoCanal * getCola();
 	void setCabeza(NodoCanal *);
 	void setCola(NodoCanal *);
-        void insertarAlInicio(int);
-	void insertarAlFinal(int);
+        void insertarAlInicio(NodoCanal *);
+	void insertarAlFinal(NodoCanal *);
 	bool estaVacia();
 	void mostrarLista();
 };

@@ -30,6 +30,10 @@ public:
         void setNombreEmpresa(string);
         void setCodigoAnuncio(string);
         void setTiempoDuracion(int);
+        string getCodigoEmpresa();
+        string getNombreEmpresa();
+        string getCodigoAnuncio();
+        int getTiempoDuracion();
 };
 
 #endif /* ANUNCIO_H */

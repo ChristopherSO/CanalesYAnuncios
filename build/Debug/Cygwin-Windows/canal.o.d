@@ -1,6 +1,6 @@
-build/Debug/Cygwin-Windows/main.o: main.cpp anuncio.h canal.h \
+build/Debug/Cygwin-Windows/canal.o: canal.cpp anuncio.h canal.h \
  listaanuncioscontratados.h nodoanunciocontratado.h nodoanuncio.h \
- listaanuncios.h listacanales.h nodocanal.h
+ listaanuncios.h
 
 anuncio.h:
 
@@ -13,7 +13,3 @@ nodoanunciocontratado.h:
 nodoanuncio.h:
 
 listaanuncios.h:
-
-listacanales.h:
-
-nodocanal.h:

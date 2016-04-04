@@ -11,11 +11,13 @@
 using namespace std;
 
 NodoAnuncioContratado::NodoAnuncioContratado() {
-
+    this->nodoAnuncio = NULL;
+    this->siguiente = NULL;
 }
 
 NodoAnuncioContratado::NodoAnuncioContratado(NodoAnuncio* panuncio) {
-    codigoAnuncio = panuncio->getAnuncio()->getCodigoAnuncio();
+    this->codigoAnuncio = panuncio->getAnuncio()->getCodigoAnuncio();
+    this->nodoAnuncio = panuncio;
 }
 
 string NodoAnuncioContratado::getCodigoAnuncio() {
@@ -30,6 +32,10 @@ NodoAnuncioContratado* NodoAnuncioContratado::getSiguiente() {
     return siguiente;
 }
 
+double NodoAnuncioContratado::getCosto() {
+    return costo;
+}
+
 void NodoAnuncioContratado::setCodigoAnuncio(string pcodigo) {
     codigoAnuncio = pcodigo;
 }
@@ -39,5 +45,9 @@ void NodoAnuncioContratado::setNodoAnuncio(NodoAnuncio* panuncio) {
 }
 
 void NodoAnuncioContratado::setSiguiente(NodoAnuncioContratado* panuncio) {
-    siguiente = siguiente;
+    siguiente = panuncio;
+}
+
+void NodoAnuncioContratado::setCosto(double pcosto) {
+    costo = pcosto;
 }

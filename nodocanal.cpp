@@ -10,11 +10,15 @@
 using namespace std;
 
 NodoCanal::NodoCanal() {
-
+    this->canal = NULL;
+    this->anterior = NULL;
+    this->siguiente = NULL;
 }
 
 NodoCanal::NodoCanal(Canal* pcanal) {
     canal = pcanal;
+    this->anterior = NULL;
+    this->siguiente = NULL;
 }
 
 Canal* NodoCanal::getCanal() {

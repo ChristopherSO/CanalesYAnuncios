@@ -21,15 +21,18 @@ private:
     string codigoAnuncio;
     NodoAnuncio * nodoAnuncio;
     NodoAnuncioContratado * siguiente;
+    double costo;
 public:
     NodoAnuncioContratado(); // Constructora
     NodoAnuncioContratado(NodoAnuncio*); // Constructora
     string getCodigoAnuncio();
     NodoAnuncio * getNodoAnuncio();
     NodoAnuncioContratado * getSiguiente();
+    double getCosto();
     void setCodigoAnuncio(string);
     void setNodoAnuncio(NodoAnuncio *);
     void setSiguiente(NodoAnuncioContratado *);
+    void setCosto(double);
 };
 
 #endif /* NODOANUNCIOCONTRATADO_H */

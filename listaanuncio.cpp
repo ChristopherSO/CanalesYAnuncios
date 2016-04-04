@@ -11,6 +11,8 @@
 using namespace std;
 
 ListaAnuncios::ListaAnuncios() {
+    this->longitud = 0;
+    this->cabeza = NULL;
 }
 
 int ListaAnuncios::getLongitud() {

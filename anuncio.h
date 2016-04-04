@@ -22,18 +22,18 @@ private:
 	string codigoEmpresa;
 	string nombreEmpresa;
         string codigoAnuncio;
-        int tiempoDuracion;
+        double tiempoDuracion;
 public:
 	Anuncio(); // Constructora
-        Anuncio(string, string, string, int); // Constructora
+        Anuncio(string, string, string, double); // Constructora
         void setCodigoEmpresa(string);
         void setNombreEmpresa(string);
         void setCodigoAnuncio(string);
-        void setTiempoDuracion(int);
+        void setTiempoDuracion(double);
         string getCodigoEmpresa();
         string getNombreEmpresa();
         string getCodigoAnuncio();
-        int getTiempoDuracion();
+        double getTiempoDuracion();
 };
 
 #endif /* ANUNCIO_H */

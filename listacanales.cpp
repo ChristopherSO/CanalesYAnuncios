@@ -10,7 +10,9 @@
 using namespace std;
 
 ListaCanales::ListaCanales() {
-
+    this->longitud = 0;
+    this->cabeza = NULL;
+    this->cola = NULL;
 }
 
 int ListaCanales::getLongitud() {
@@ -57,16 +59,14 @@ void ListaCanales::insertarAlFinal(NodoCanal * pcanal) {
     if (pcanal == NULL) {
 
     } else {
-        if (this->cabeza == NULL) {
+        if (this->cola == NULL) {
+            cola = pcanal;
             this->cabeza = pcanal;
         } else {
-
-            this->cabeza->setAnterior(pcanal);
-            pcanal->setSiguiente(this->cabeza);
-            this->cabeza = pcanal;
-
+            pcanal->setAnterior(this->cola);
+            this->cola = pcanal;
+            this->cola->getAnterior()-> setSiguiente(this->cola);
         }
-
     }
     this->longitud++;
 

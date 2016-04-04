@@ -9,10 +9,11 @@
 #include "anuncio.h"
 #include "canal.h"
 #include "listaanuncios.h"
+#include "listaanuncioscontratados.h"
 using namespace std;
 
-Canal::Canal(string pcodigo, string pnombre, int ptelefono, int pmontoMinimo,
-        int ptiempoMinimo, int ptiempoMaximo, int pcostoPorMinuto) {
+Canal::Canal(string pcodigo, string pnombre, int ptelefono, double pmontoMinimo,
+        double ptiempoMinimo, double ptiempoMaximo, double pcostoPorMinuto) {
 
     codigo = pcodigo;
     nombre = pnombre;
@@ -37,19 +38,19 @@ void Canal::setTelefono(int ptelefono) {
     telefono = ptelefono;
 }
 
-void Canal::setMontoMinimo(int pmontoMinimo) {
+void Canal::setMontoMinimo(double pmontoMinimo) {
     montoMinimo = pmontoMinimo;
 }
 
-void Canal::setTiempoMinimo(int ptiempoMinimo) {
+void Canal::setTiempoMinimo(double ptiempoMinimo) {
     tiempoMinimo = ptiempoMinimo;
 }
 
-void Canal::setTiempoMaximo(int ptiempoMaximo) {
+void Canal::setTiempoMaximo(double ptiempoMaximo) {
     tiempoMaximo = ptiempoMaximo;
 }
 
-void Canal::setCostoPorMinuto(int pcostoPorMinuto) {
+void Canal::setCostoPorMinuto(double pcostoPorMinuto) {
     costoPorMinuto = pcostoPorMinuto;
 }
 
@@ -65,6 +66,14 @@ void Canal::setAnunciosContratados(Anuncio * panuncio) {
     
 }
 
+void Canal::insertarAnuncioContratadoAlInicio(NodoAnuncio * panuncio) {
+
+    NodoAnuncioContratado * nodoAnuncioContratado;
+    nodoAnuncioContratado = new NodoAnuncioContratado(panuncio);
+    
+    this->anunciosContratados->insertarAlInicio(nodoAnuncioContratado);
+}
+
 string Canal::getCodigo() {
     return codigo;
 }
@@ -77,19 +86,19 @@ int Canal::getTelefono() {
     return telefono;
 }
 
-int Canal::getMontoMinimo() {
+double Canal::getMontoMinimo() {
     return montoMinimo;
 }
 
-int Canal::getTiempoMinimo() {
+double Canal::getTiempoMinimo() {
     return tiempoMinimo;
 }
 
-int Canal::getTiempoMaximo() {
+double Canal::getTiempoMaximo() {
     return tiempoMaximo;
 }
 
-int Canal::getCostoPorMinuto() {
+double Canal::getCostoPorMinuto() {
     return costoPorMinuto;
 }
 
@@ -98,38 +107,47 @@ ListaAnunciosContratados * Canal::getAnunciosContratados() {
 }
 
 void Canal::ActualizaCobros() {
-
-
-
+    
     if (anunciosContratados->getCabeza()!= NULL) {
 
+        this->anunciosContratados->setCostoTotalPorCobrar(0);
         NodoAnuncioContratado * aux = this->anunciosContratados->getCabeza();
 
         while (aux != NULL) {
-
+            double submonto = 0;
+            double duracion = aux->getNodoAnuncio()->getAnuncio()->getTiempoDuracion();
             /*
              * Si un anuncio tiene menos tiempo en transmisión se le cobrará el
-            Monto mínimo a Cobrar por el canal
+             * monto mínimo a Cobrar por el canal
              */
-            if (aux->getNodoAnuncio()->getAnuncio()->getTiempoDuracion() < tiempoMinimo) {
-                int submonto = this->anunciosContratados->getCostoTotalPorCobrar() + montoMinimo;
-                this->anunciosContratados->setCostoTotalPorCobrar(submonto);
-            }
-            
-            /*
-             Si un anuncio tiene mayor tiempo al máximo a trasmitir, se le 
-             * cobrará el doble del Costo por minuto al doble, solo a los minutos extras.
-             */
-            if (aux->getNodoAnuncio()->getAnuncio()->getTiempoDuracion() > tiempoMaximo) {
+            if (duracion < tiempoMinimo) {
+                submonto += montoMinimo;
+            } else {
+                /*
+                 * Si un anuncio tiene mayor tiempo al máximo a trasmitir, se le 
+                 * cobrará el doble del Costo por minuto al doble, solo a los minutos extras.
+                 */                
+                if (duracion > tiempoMaximo) {
+                    // Monto exedido
+                    submonto += this->getCostoPorMinuto() * (duracion - tiempoMaximo);
+                    duracion = tiempoMaximo;
+                }
+                // Monto regular
+                submonto += this->getCostoPorMinuto() * duracion;
                 
-            }
+                aux->setCosto(submonto);
+                
+                this->anunciosContratados->setCostoTotalPorCobrar(
+                        this->anunciosContratados->getCostoTotalPorCobrar()
+                        + submonto
+                );
+            }            
             
-             aux = aux->getSiguiente();
-
-
+            aux = aux->getSiguiente();
         }
     }
-
-
 }
 
+void Canal::ImprimeCanal() {
+    this->getAnunciosContratados()->mostrarLista();
+}

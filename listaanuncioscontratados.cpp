@@ -11,7 +11,9 @@
 using namespace std;
 
 ListaAnunciosContratados::ListaAnunciosContratados() {
-    costoTotalPorCobrar = 0;
+    this->longitud = 0;
+    this->cabeza = NULL;
+    this->costoTotalPorCobrar = 0;
 }
 
 void ListaAnunciosContratados::setCabeza(NodoAnuncioContratado* panunciocontrado) {
@@ -19,7 +21,7 @@ void ListaAnunciosContratados::setCabeza(NodoAnuncioContratado* panunciocontrado
     costoTotalPorCobrar = 0;
 }
 
-void ListaAnunciosContratados::setCostoTotalPorCobrar(int pmonto) {
+void ListaAnunciosContratados::setCostoTotalPorCobrar(double pmonto) {
     costoTotalPorCobrar = pmonto;
 }
 
@@ -27,7 +29,7 @@ int ListaAnunciosContratados::getLongitud() {
     return longitud;
 }
 
-int ListaAnunciosContratados::getCostoTotalPorCobrar() {
+double ListaAnunciosContratados::getCostoTotalPorCobrar() {
     return costoTotalPorCobrar;
 }
 
@@ -41,16 +43,13 @@ void ListaAnunciosContratados::insertarAlInicio(NodoAnuncioContratado * panuncio
 
     } else {
         if (this->cabeza == NULL) {
-            cabeza = panuncio;
+            this->cabeza = panuncio;
         } else {
             panuncio->setSiguiente(this->cabeza);
             this->cabeza = panuncio;
         }
         this->longitud++;
-
     }
-
-
 }
 
 bool ListaAnunciosContratados::estaVacia() {
@@ -66,12 +65,14 @@ void ListaAnunciosContratados::mostrarLista() {
         aux = this->cabeza;
 
         while (aux != NULL) {
-            cout << "Código Anuncio Contratado: " << aux->getCodigoAnuncio() << endl;
+            cout << "Nombre Empresa: " << aux->getNodoAnuncio()->getAnuncio()->getNombreEmpresa() << endl
+                    << "Código Empresa: " << aux->getNodoAnuncio()->getAnuncio()->getCodigoEmpresa() << endl
+                    << "Código Anuncio: " << aux->getNodoAnuncio()->getAnuncio()->getCodigoAnuncio() << endl
+                    << "Monto a pagar: " << aux->getCosto() << endl
+                    << "--------------------------------------------" << endl;
             aux = aux->getSiguiente();
-
         }
-        
+        cout << "Costo total por cobrar: " << this->getCostoTotalPorCobrar() << endl;
     }
-
 }
 

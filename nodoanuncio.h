@@ -22,6 +22,7 @@ private:
     Anuncio * anuncio;
     NodoAnuncio * siguiente;
 public:
+    NodoAnuncio(); // Constructora
     NodoAnuncio(Anuncio *); // Constructora
     Anuncio * getAnuncio();
     NodoAnuncio * getSiguiente();

@@ -9,9 +9,14 @@
 #include "nodoanuncio.h"
 using namespace std;
 
+NodoAnuncio::NodoAnuncio() {
+    anuncio = NULL;
+    siguiente = NULL;
+}
+
 NodoAnuncio::NodoAnuncio(Anuncio * panuncio) {
     anuncio = panuncio;
-
+    siguiente = NULL;
 }
 
 Anuncio* NodoAnuncio::getAnuncio() {

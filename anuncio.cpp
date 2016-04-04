@@ -10,7 +10,7 @@
 using namespace std;
 
 Anuncio::Anuncio(string pcodigoEmpresa, string pnombreEmpresa,
-        string pcodigoAnuncio, int ptiempoDuracion) {
+        string pcodigoAnuncio, double ptiempoDuracion) {
     
     codigoEmpresa = pcodigoEmpresa;
     nombreEmpresa = pnombreEmpresa;
@@ -31,7 +31,7 @@ void Anuncio::setCodigoAnuncio(string pcodigoAnuncio){
     codigoAnuncio = pcodigoAnuncio;
 }
 
-void Anuncio::setTiempoDuracion(int ptiempoDuracion){
+void Anuncio::setTiempoDuracion(double ptiempoDuracion){
     tiempoDuracion = ptiempoDuracion;
 }
 
@@ -47,6 +47,6 @@ string Anuncio::getCodigoAnuncio(){
     return codigoAnuncio;
 }
 
-int Anuncio::getTiempoDuracion(){
+double Anuncio::getTiempoDuracion(){
     return tiempoDuracion;
 }

@@ -19,18 +19,18 @@
 class ListaAnunciosContratados {
 private:
     int longitud;
-    int costoTotalPorCobrar;
+    double costoTotalPorCobrar;
     NodoAnuncioContratado * cabeza;
 public:
     ListaAnunciosContratados(); // Constructora
     int getLongitud();
-    int getCostoTotalPorCobrar();
+    double getCostoTotalPorCobrar();
     NodoAnuncioContratado * getCabeza();
     void insertarAlInicio(NodoAnuncioContratado *);
     bool estaVacia();
     void mostrarLista();
     void setCabeza(NodoAnuncioContratado *);
-    void setCostoTotalPorCobrar(int);
+    void setCostoTotalPorCobrar(double);
     
 };
 

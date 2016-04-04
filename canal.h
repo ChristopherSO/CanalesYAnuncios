@@ -23,31 +23,33 @@ private:
     string codigo;
     string nombre;
     int telefono;
-    int montoMinimo;
-    int tiempoMinimo;
-    int tiempoMaximo;
-    int costoPorMinuto;
+    double montoMinimo;
+    double tiempoMinimo;
+    double tiempoMaximo;
+    double costoPorMinuto;
     ListaAnunciosContratados * anunciosContratados;
 public:
     Canal(); // Constructora
-    Canal(string, string, int, int, int, int, int); // Constructora
+    Canal(string, string, int, double, double, double, double); // Constructora
     void setCodigo(string);
     void setNombre(string);
     void setTelefono(int);
-    void setMontoMinimo(int);
-    void setTiempoMinimo(int);
-    void setTiempoMaximo(int);
+    void setMontoMinimo(double);
+    void setTiempoMinimo(double);
+    void setTiempoMaximo(double);
     void setAnunciosContratados(Anuncio *);
-    void setCostoPorMinuto(int);
+    void insertarAnuncioContratadoAlInicio(NodoAnuncio *);
+    void setCostoPorMinuto(double);
     string getCodigo();
     string getNombre();
     int getTelefono();
-    int getMontoMinimo();
-    int getTiempoMinimo();
-    int getTiempoMaximo();
-    int getCostoPorMinuto();
+    double getMontoMinimo();
+    double getTiempoMinimo();
+    double getTiempoMaximo();
+    double getCostoPorMinuto();
     ListaAnunciosContratados * getAnunciosContratados();
     void ActualizaCobros();
+    void ImprimeCanal();
 };
 
 #endif // LISTAENTEROS_H

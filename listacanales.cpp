@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "listacanales.h"
+#include "listaanuncios.h"
 using namespace std;
 
 ListaCanales::ListaCanales() {
@@ -111,6 +112,52 @@ void ListaCanales::mostrarLista() {
 
         }
     }
+}
 
+Canal * ListaCanales::getCanalPorCodigo(string pcodigo) {
+
+    NodoCanal * aux;
+
+    if (this->cabeza != NULL) {
+
+        aux = this->cabeza;
+
+        while (aux != NULL) {
+            if (aux->getCanal()->getCodigo() == pcodigo) {
+                return aux->getCanal();
+            }
+            aux = aux->getSiguiente();
+        }
+    }
+    
+    return NULL;
+}
+
+void ListaCanales::IncluirAnuncio(string pcodigoCanal, ListaAnuncios * plistaAnuncios, string pcodigoAnuncio) {
+    
+    Canal * canal = this->getCanalPorCodigo(pcodigoCanal);
+    
+    if(canal == NULL) {
+        cout << "No se encontro ningun canal con ese codigo" << endl;
+    } else {
+        Anuncio * anuncioAIncuir = plistaAnuncios->getAnuncioPorCodigo(pcodigoAnuncio);
+    
+        if(anuncioAIncuir == NULL) {
+            cout << "No se encontro ningun anuncio con ese codigo" << endl;
+        } else {
+            if (canal->getAnunciosContratados()->elAnuncioYaExiste(pcodigoAnuncio)) {
+                cout << "El anuncio ya se encuentra incluido para el canal" << endl;
+            } else {
+                NodoAnuncio * nodoAnuncio = new NodoAnuncio(anuncioAIncuir);
+                
+                NodoAnuncioContratado * nodoAnuncioContratado = new NodoAnuncioContratado(nodoAnuncio);
+                
+                canal->getAnunciosContratados()->insertarAlInicio(nodoAnuncioContratado);
+                
+                cout << "Anuncio incluido exitosamente" << endl;
+            }
+        }
+    }
+    
 
 }

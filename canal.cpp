@@ -54,18 +54,6 @@ void Canal::setCostoPorMinuto(double pcostoPorMinuto) {
     costoPorMinuto = pcostoPorMinuto;
 }
 
-void Canal::setAnunciosContratados(Anuncio * panuncio) {
-    
-    NodoAnuncio * nuevoNodoAnuncio; 
-    nuevoNodoAnuncio->setAnuncio(panuncio);
-    
-    NodoAnuncioContratado * nuevoAun;
-    nuevoAun->setNodoAnuncio(nuevoNodoAnuncio);
-    
-    anunciosContratados->insertarAlInicio(nuevoAun);
-    
-}
-
 void Canal::insertarAnuncioContratadoAlInicio(NodoAnuncio * panuncio) {
 
     NodoAnuncioContratado * nodoAnuncioContratado;

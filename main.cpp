@@ -54,8 +54,7 @@ int main(int argc, char** argv) {
     miListaAnuncios->insertarAlInicio(na1);
     //miListaAnuncios->mostrarLista();
 
-    //    Se hacen pruebas para insertar al principio y al final con distintos 
-    //    canales.
+    // Se hacen pruebas para insertar al principio y al final con distintos canales
     miListaCanales->insertarAlFinal(new NodoCanal(canal3));
     miListaCanales->insertarAlFinal(new NodoCanal(canal4));
     miListaCanales->insertarAlInicio(new NodoCanal(canal2));
@@ -64,9 +63,6 @@ int main(int argc, char** argv) {
 //    miListaCanales->mostrarLista();
 
     // Se agregan anuncios a la lista de anuncios contratados de un canal
-//    canal1->setAnunciosContratados(a1);
-//    canal1->setAnunciosContratados(a2);
-//    canal1->getAnunciosContratados()->mostrarLista();
     canal1->insertarAnuncioContratadoAlInicio(na4);
     canal1->insertarAnuncioContratadoAlInicio(na2);
     canal1->getAnunciosContratados()->mostrarLista();
@@ -76,9 +72,11 @@ int main(int argc, char** argv) {
     canal1->ActualizaCobros();
     canal1->ImprimeCanal();
 
-//    miListaCanales->mostrarLista();
-//    cout<< "*!*!*!*!*!*!*!*!*!*!*" << endl;
-//    miListaAnuncios->mostrarLista();
+    cout<< "*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*" << endl;
+    miListaCanales->IncluirAnuncio("C1", miListaAnuncios, "E1");    
+    miListaCanales->IncluirAnuncio("C1", miListaAnuncios, "E2");    
+    
+    
     return 0;
 }
 

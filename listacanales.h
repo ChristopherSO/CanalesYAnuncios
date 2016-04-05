@@ -15,24 +15,27 @@
 #define LISTACANALES_H
 
 #include "nodocanal.h"
+#include "listaanuncios.h" 
 
 class ListaCanales
 {
 private:
-	int longitud;
-	NodoCanal * cabeza;
-	NodoCanal * cola;
+    int longitud;
+    NodoCanal * cabeza;
+    NodoCanal * cola;
 public:
-	ListaCanales(); // Constructora
-	int getLongitud();
-        NodoCanal * getCabeza();
-        NodoCanal * getCola();
-	void setCabeza(NodoCanal *);
-	void setCola(NodoCanal *);
-        void insertarAlInicio(NodoCanal *);
-	void insertarAlFinal(NodoCanal *);
-	bool estaVacia();
-	void mostrarLista();
+    ListaCanales(); // Constructora
+    int getLongitud();
+    NodoCanal * getCabeza();
+    NodoCanal * getCola();
+    void setCabeza(NodoCanal *);
+    void setCola(NodoCanal *);
+    void insertarAlInicio(NodoCanal *);
+    void insertarAlFinal(NodoCanal *);
+    bool estaVacia();
+    void mostrarLista();
+    Canal * getCanalPorCodigo(string);
+    void IncluirAnuncio(string, ListaAnuncios *, string);
 };
 
 #endif /* LISTACANALES_H */

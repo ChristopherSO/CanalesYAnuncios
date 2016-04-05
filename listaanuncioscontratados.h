@@ -31,7 +31,7 @@ public:
     void mostrarLista();
     void setCabeza(NodoAnuncioContratado *);
     void setCostoTotalPorCobrar(double);
-    
+    bool elAnuncioYaExiste(string);
 };
 
 #endif /* LISTAANUNCIOSCONTRATADOS_H */

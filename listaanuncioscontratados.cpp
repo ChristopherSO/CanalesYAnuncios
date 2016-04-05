@@ -76,3 +76,21 @@ void ListaAnunciosContratados::mostrarLista() {
     }
 }
 
+bool ListaAnunciosContratados::elAnuncioYaExiste(string pcodigoAnuncio) {
+
+    NodoAnuncioContratado * aux;
+
+    if (this->cabeza != NULL) {
+
+        aux = this->cabeza;
+
+        while (aux != NULL) {
+            if (aux->getCodigoAnuncio() == pcodigoAnuncio) {
+                return true;
+            }
+            aux = aux->getSiguiente();
+        }
+    }
+    
+    return false;
+}

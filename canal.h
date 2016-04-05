@@ -37,7 +37,6 @@ public:
     void setMontoMinimo(double);
     void setTiempoMinimo(double);
     void setTiempoMaximo(double);
-    void setAnunciosContratados(Anuncio *);
     void insertarAnuncioContratadoAlInicio(NodoAnuncio *);
     void setCostoPorMinuto(double);
     string getCodigo();

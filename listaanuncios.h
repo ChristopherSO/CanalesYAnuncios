@@ -19,16 +19,17 @@
 class ListaAnuncios
 {
 private:
-	int longitud;
-	NodoAnuncio * cabeza;
+    int longitud;
+    NodoAnuncio * cabeza;
 public:
-	ListaAnuncios(); // Constructora
-	int getLongitud();
-        NodoAnuncio * getCabeza();
-	void setCabeza(NodoAnuncio *);
-        void insertarAlInicio(NodoAnuncio *);
-	bool estaVacia();
-	void mostrarLista();
+    ListaAnuncios(); // Constructora
+    int getLongitud();
+    NodoAnuncio * getCabeza();
+    void setCabeza(NodoAnuncio *);
+    void insertarAlInicio(NodoAnuncio *);
+    bool estaVacia();
+    void mostrarLista();
+    Anuncio * getAnuncioPorCodigo(string);
 };
 
 #endif /* LISTAANUNCIOS_H */

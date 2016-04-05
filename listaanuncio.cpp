@@ -67,5 +67,23 @@ void ListaAnuncios::mostrarLista() {
 
         }
     }
+}
 
+Anuncio * ListaAnuncios::getAnuncioPorCodigo(string pcodigoAnuncio) {
+
+    NodoAnuncio * aux;
+
+    if (this->cabeza != NULL) {
+
+        aux = this->cabeza;
+
+        while (aux != NULL) {
+            if (aux->getAnuncio()->getCodigoAnuncio() == pcodigoAnuncio) {
+                return aux->getAnuncio();
+            }
+            aux = aux->getSiguiente();
+        }
+    }
+    
+    return NULL;
 }
